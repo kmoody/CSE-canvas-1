@@ -28,14 +28,14 @@
 				ctx.closePath();
 				
 				 //set the fill color to red
-				ctx.fillStyle= color || "#FF0000";
+				ctx.fillStyle= color || "#0000FF";
     			ctx.fill();
 			}
 			
 			canvas.addEventListener('mousemove', function(event) {
 				console.log('mousemove at (%o, %o)', event.offsetX, event.offsetY);
 						
-				drawCircle(event.offsetX, event.offsetY, 6)
+				drawCircle(event.offsetX, event.offsetY, 10)
 			
 			});
 			
