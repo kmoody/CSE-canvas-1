@@ -16,7 +16,8 @@
 		<script>
 			var canvas = document.getElementById('myCanvas');
 			var ctx = canvas.getContext('2d');
-			
+			var x=250;
+			var y=250;
 			
 			
 			function drawCircle(x, y, radius, color)
@@ -32,10 +33,29 @@
     			ctx.fill();
 			}
 			
-			canvas.addEventListener('mousemove', function(event) {
-				console.log('mousemove at (%o, %o)', event.offsetX, event.offsetY);
-						
-				drawCircle(event.offsetX, event.offsetY, 6)
+			document.body.addEventListener('keyup', function(event) {
+				console.log('keyup', event.keyIdentifier);
+				
+	        	if(event.keyIdentifier=="Up")
+	        	{
+	        		y=y-5;
+	        	}
+	        	
+	        	if(event.keyIdentifier=="Down")
+	        	{
+	        		y=y+5;
+	        	}
+	        	
+	        	if(event.keyIdentifier=="Right")
+	        	{
+	        		x=x+5;
+	        	}
+				
+				if(event.keyIdentifier=="Left")
+	        	{
+	        		x=x-5;
+	        	}
+				drawCircle(x,y,6)
 			
 			});
 			
